@@ -1,0 +1,88 @@
+Git 
+
+#check git version
+git --version
+
+#set global variables
+git config --global user.name "username"
+git config --global user.email "user@user.com"
+
+#see all config values of git in your machine
+git config --list
+
+#to get help for any verb use syntax 
+git help <verb>
+git <verb> --help
+
+e.g. git config --help 
+git help config
+
+#to initialise a codebase using git
+Go to the codebase folder and hit
+git init
+
+#check status of your repo
+git status
+
+#to ignore files in codebase 
+Create a .gitignore file and add all those filenames into it
+
+#to add files / stage modified files to staging area:
+git add -A #to stage all the file
+git add <filename> #stage specific file
+git status
+
+#to remove files from staging area
+git reset <filename>
+git reset #to remove all files from staging area
+
+#to commit files in staging area
+git commit -m "message of the commit"
+
+#to see log of all the activities and commits
+git log
+
+
+#to clone remote repos
+git clone <url> <where to clone>
+e.g. git clone https://xyz .
+
+
+#to see changes made in repo
+git diff
+
+#to get info of the remote repo
+git remote -v
+git branch -a
+
+#to push code to remote directory 
+git commit -m "commit message"
+git pull -u origin <master branch name>
+git push -u origin <master branch name>
+
+Or simply
+
+git pull
+git push
+
+#to create branch 
+git branch <branchname>
+git checkout <branchname>
+
+#to merge local branch to master branch
+git checkout master
+git merge <branchnametobemergerd>
+git push origin master
+
+#Final flow
+1. git clone <remote_repo_url> <main_branch_name> #clone the remote repo
+2. git branch <local_branch_name> #create a local branch for editing the code
+3. git checkout <local_branch_name> #checkout to your local branch for further editing the code
+4. git pull <remote_repo_url> <main_branch_name> #pull all the recent changes in your local branch
+5. #make all your code changes
+6. git add -A #add all your changes to staging area
+7. git commit -m "commit_message" #commit your changes
+8. git checkout <main_branch_name> #goto main branch
+9. git pull <remote_repo_url> <main_branch_name>
+10. git merge <local_branch_name> #merge committed changes of the local branch to the remote main branch
+11. git push <remote_repo_url> <main_branch_name> #finall push the merged changes
